@@ -43,7 +43,29 @@ class CarManagerTest(TestCase):
 
         self.assertEqual("Fuel amount cannot be negative!", str(ex.exception))
 
-# all setters tests work, left with methods testing
+
+    def test_refuel_if_fuel_given_is_negative_raise_exception(self):
+        with self.assertRaises(Exception) as ex:
+            self.car.refuel(-5)
+
+        self.assertEqual("Fuel amount cannot be zero or negative!", str(ex.exception))
+
+    def test_refuel_with_more_than_fuel_capacity(self):
+
+        self.car.refuel(140)
+        self.assertEqual(100, self.car.fuel_amount)
+
+    def test_drive_with_not_enough_fuel_raise_exception(self):
+        with self.assertRaises(Exception) as ex:
+            self.car.drive(100)
+
+        self.assertEqual("You don't have enough fuel to drive!", str(ex.exception))
+
+    def test_drive_with_enough_fuel_reduce_fuel_amount(self):
+        self.car.fuel_amount = 50
+        self.car.drive(100)
+
+        self.assertEqual(40, self.car.fuel_amount)
 
 
 if __name__ == '__main__':
