@@ -24,10 +24,3 @@ class Player:
                 f"HP: {self.hp}\n"
                 f"MP: {self.mp}\n"
                 f"{skills}")
-
-        # result = [f"Name: {self.name}\nGuild: {self.guild}\nHP: {self.hp}\nMP: {self.mp}"]
-        #
-        # for k, v in self.skills.items():
-        #     result.append(f"==={k} - {v}")
-        #
-        # return '\n'.join(result)

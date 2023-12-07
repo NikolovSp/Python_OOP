@@ -20,7 +20,7 @@ class Album:
 
             return "Cannot add songs. Album is published."
 
-        if song.name in self.songs:
+        if song in self.songs:
             return "Song is already in the album."
 
         self.songs.append(song)

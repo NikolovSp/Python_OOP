@@ -30,10 +30,6 @@ class Section:
     def clean_section(self):
         counter = len(self.tasks)
         self.tasks.clear()
-        # for task in self.tasks:
-        #     if task.completed:
-        #         self.tasks.remove(task)
-        #         counter += 1
 
         return f"Cleared {counter} tasks."
 

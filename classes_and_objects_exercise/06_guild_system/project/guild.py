@@ -23,13 +23,12 @@ class Guild:
 
     def kick_player(self, player_name):
         try:
-            player_ = next(filter(lambda x: x.name == player_name, self.players))
+            player = next(filter(lambda x: x.name == player_name, self.players))
         except StopIteration:
-            #filter is empty, meaning there is an error
 
             return f"Player {player_name} is not in the guild."
 
-        self.players.remove(player_)
+        self.players.remove(player)
         player.guild = Player.DEFAULT_GUILD
 
         return f"Player {player_name} has been removed from the guild."
